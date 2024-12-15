@@ -1,0 +1,46 @@
+{
+    "coord": {
+        "lon": -4.5333,
+        "lat": 42.0167
+    },
+    "weather": [
+        {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 8.21,
+        "feels_like": 8.21,
+        "temp_min": 5.7,
+        "temp_max": 8.3,
+        "pressure": 1038,
+        "humidity": 78,
+        "sea_level": 1038,
+        "grnd_level": 943
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 0.89,
+        "deg": 0,
+        "gust": 1.34
+    },
+    "clouds": {
+        "all": 0
+    },
+    "dt": 1734275516,
+    "sys": {
+        "type": 2,
+        "id": 2000505,
+        "country": "ES",
+        "sunrise": 1734248371,
+        "sunset": 1734281249
+    },
+    "timezone": 3600,
+    "id": 3114531,
+    "name": "Palencia",
+    "cod": 200
+}
