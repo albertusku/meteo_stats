@@ -1,5 +1,18 @@
 {
-    "api_key": "ab665907b47f7da18b3d9a63ef07e2fa",
-    "station_id": "3114531",
-    "units": "metric"
+    "weather_api": {
+        "api_key": "ab665907b47f7da18b3d9a63ef07e2fa",
+        "station_id": "3114531",
+        "units": "metric"
+    },
+    "tomorrow_api": {
+        "api_key": "CBMOH9lLCOT6lTIMwDxKsQJ18r5bhSuw",
+        "location": {
+            "latitude": 42.01,
+            "longitude": -4.52
+        },
+        "units": "metric",
+        "fields": "precipitationIntensity,temperature",
+        "timesteps":"30m"
+
+    }
 }

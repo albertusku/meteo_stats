@@ -11,18 +11,16 @@ def unix_to_time(unix_time):
 def create_storage_dataframe(data):
     # data["sunrise"]=unix_to_time(data["sunrise"])
     # data["sunset"]=unix_to_time(data["sunset"])
-    data["data_time"]=unix_to_time(data["data_time"])
-    year=data["data_time"].year
-    mes=data["data_time"].strftime("%B")
-    dia=data["data_time"].day
-    hora=data["data_time"].strftime("%H:%M")
-    minuto=data["data_time"].strftime("%M")
+    now=datetime.now()
+    year=now.year
+    mes=now.strftime("%B")
+    dia=now.day
+    hora=now.strftime("%H:%M:%S")
     new_data={"Mes":mes,"Dia":dia,"Hora":hora}
     data={**new_data,**data}
     data.pop("data_time",None)
     df=pd.DataFrame([data])
-    if min==0 or min==30:
-        save_excel(df,str(year))
+    save_excel(df,str(year))
 
 def save_excel(df,sheet_name):
     try:
