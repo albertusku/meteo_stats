@@ -30,3 +30,5 @@ Datos guardados exitosamente en '/home/ruiz17/meteo/Data_storage/Historical_weat
 Datos guardados exitosamente en '/home/ruiz17/meteo/Data_storage/Historical_weather.xlsx' en la hoja '2024'.
 {'Mes': 'December', 'Dia': 16, 'Hora': '14:30:02', 'temp (C)': 7.5, 'precipitation (mm/h)': 0, 'hum(%)': 73, 'pres(hPa)': 1035, 'wind_speed(m/s)': 0.45}
 Datos guardados exitosamente en '/home/ruiz17/meteo/Data_storage/Historical_weather.xlsx' en la hoja '2024'.
+{'Mes': 'December', 'Dia': 16, 'Hora': '15:00:02', 'temp (C)': 7.69, 'precipitation (mm/h)': 0, 'hum(%)': 65, 'pres(hPa)': 1035, 'wind_speed(m/s)': 0.45}
+Datos guardados exitosamente en '/home/ruiz17/meteo/Data_storage/Historical_weather.xlsx' en la hoja '2024'.
