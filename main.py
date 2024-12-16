@@ -6,5 +6,4 @@ if __name__ == "__main__":
     params=read_json()
     data = get_current_data(params)
     create_storage_dataframe(data)
-    print(data)
     

@@ -11,7 +11,12 @@ dict_api={"tomorrow_api":tomorrow_api_url,"weather_api":weather_api_url}
 data={}
 
 def get_current_data(params):
-
+    #TODO list
+        #Obtener predicciones para el dia actual,para mañana y para dentro de 3 dias
+        #Forma de almacenarlo en un excel llamado /Data_storage/Data_forecast/forecast_predictions.xlxs
+            #Primera columana con el dia actual, 3 primeras columnas relacionadas con el dia actual, 3 siguientes con la de mañana y 3 siguientes
+            #con lo dentro de 3 dias
+            #3 columanas para cada dias porque: temperatura max,min y precipitacion total
     for name,url in dict_api.items():
         response=get_data_from_api(name,url,params[name])
         data.update(response)

@@ -1,58 +1,14 @@
 Datos guardados exitosamente en '/home/ruiz17/meteo/Data_storage/Historical_weather.xlsx' en la hoja '2024'.
-{'temp': 7.87, 'hum': 73, 'pres': 1038, 'wind_speed': 1.34}
+{'temp (C)': -1.5, 'precipitation (mm/h)': 0, 'hum(%)': 91, 'pres(hPa)': 1039, 'wind_speed(m/s)': 0.93}
+Traceback (most recent call last):
+  File "/home/ruiz17/meteo/main.py", line 2, in <module>
+    from Data_storage.storage_builder import *
+  File "/home/ruiz17/meteo/Data_storage/storage_builder.py", line 3, in <module>
+    from Data_handle.stadistics import *
+ModuleNotFoundError: No module named 'Data_handle'
 Datos guardados exitosamente en '/home/ruiz17/meteo/Data_storage/Historical_weather.xlsx' en la hoja '2024'.
-{'temp': 7.77, 'hum': 72, 'pres': 1038, 'wind_speed': 1.34}
+{'temp (C)': -1.5, 'precipitation (mm/h)': 0, 'hum(%)': 91, 'pres(hPa)': 1040, 'wind_speed(m/s)': 1.79}
+{'Mes': 'December', 'Dia': 16, 'Hora': '09:30:02', 'temp (C)': -1.13, 'precipitation (mm/h)': 0, 'hum(%)': 92, 'pres(hPa)': 1040, 'wind_speed(m/s)': 1.79}
 Datos guardados exitosamente en '/home/ruiz17/meteo/Data_storage/Historical_weather.xlsx' en la hoja '2024'.
-{'temp': 7.21, 'hum': 75, 'pres': 1038, 'wind_speed': 1.88}
+{'Mes': 'December', 'Dia': 16, 'Hora': '10:00:02', 'temp (C)': -0.31, 'precipitation (mm/h)': 0, 'hum(%)': 92, 'pres(hPa)': 1040, 'wind_speed(m/s)': 1.34}
 Datos guardados exitosamente en '/home/ruiz17/meteo/Data_storage/Historical_weather.xlsx' en la hoja '2024'.
-{'temp': 6.44, 'hum': 78, 'pres': 1039, 'wind_speed': 0.45}
-Datos guardados exitosamente en '/home/ruiz17/meteo/Data_storage/Historical_weather.xlsx' en la hoja '2024'.
-{'temp': 4.77, 'hum': 81, 'pres': 1039, 'wind_speed': 1.82}
-Traceback (most recent call last):
-  File "/home/ruiz17/meteo/main.py", line 7, in <module>
-    data = get_current_data(params)
-  File "/home/ruiz17/meteo/API/API_connection.py", line 30, in get_current_data
-    get_data_meteosat()
-  File "/home/ruiz17/meteo/API/API_connection.py", line 50, in get_data_meteosat
-    json.dump(response, file, indent=4)  # Formato legible para humanos
-  File "/usr/lib/python3.10/json/__init__.py", line 179, in dump
-    for chunk in iterable:
-  File "/usr/lib/python3.10/json/encoder.py", line 438, in _iterencode
-    o = _default(o)
-  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
-    raise TypeError(f'Object of type {o.__class__.__name__} '
-TypeError: Object of type Response is not JSON serializable
-Traceback (most recent call last):
-  File "/home/ruiz17/meteo/main.py", line 7, in <module>
-    data = get_current_data(params)
-  File "/home/ruiz17/meteo/API/API_connection.py", line 30, in get_current_data
-    get_data_meteosat()
-NameError: name 'get_data_meteosat' is not defined
-Traceback (most recent call last):
-  File "/home/ruiz17/meteo/main.py", line 7, in <module>
-    data = get_current_data(params)
-  File "/home/ruiz17/meteo/API/API_connection.py", line 15, in get_current_data
-    for name,url in dict_api:
-ValueError: too many values to unpack (expected 2)
-{'temp (C)': 2.66, 'hum(%)': 84, 'pres(hPa)': 1040, 'wind_speed(m/s)': 0.89}
-HTTP error occurred: 401 Client Error: Unauthorized for url: https://api.tomorrow.io/v4/weather/forecast?api_key=CBMOH9lLCOT6lTIMwDxKsQJ18r5bhSuw&latitude=42.01&longitude=-4.52
-Traceback (most recent call last):
-  File "/home/ruiz17/meteo/main.py", line 7, in <module>
-    data = get_current_data(params)
-  File "/home/ruiz17/meteo/API/API_connection.py", line 18, in get_current_data
-    data.update(response)
-ValueError: dictionary update sequence element #0 has length 1; 2 is required
-{'temp (C)': 2.55, 'hum(%)': 85, 'pres(hPa)': 1040, 'wind_speed(m/s)': 0.89}
-HTTP error occurred: 401 Client Error: Unauthorized for url: https://api.tomorrow.io/v4/weather/forecast?latitude=42.01&longitude=-4.52&api_key=CBMOH9lLCOT6lTIMwDxKsQJ18r5bhSuw&api_key=CBMOH9lLCOT6lTIMwDxKsQJ18r5bhSuw&latitude=42.01&longitude=-4.52
-Traceback (most recent call last):
-  File "/home/ruiz17/meteo/main.py", line 7, in <module>
-    data = get_current_data(params)
-  File "/home/ruiz17/meteo/API/API_connection.py", line 18, in get_current_data
-    data.update(response)
-ValueError: dictionary update sequence element #0 has length 1; 2 is required
-Traceback (most recent call last):
-  File "/home/ruiz17/meteo/main.py", line 7, in <module>
-    data = get_current_data(params)
-  File "/home/ruiz17/meteo/API/API_connection.py", line 17, in get_current_data
-    data.update(response)
-ValueError: dictionary update sequence element #0 has length 1; 2 is required
