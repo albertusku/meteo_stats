@@ -1,0 +1,2 @@
+scp -r ruiz17@pi:/home/ruiz17/meteo/Data_storage/Historical_weather.xlsx /home/ruiz17/meteo/Data_storage/Historical_weather.xlsx
+scp -r ruiz17@pi:/home/ruiz17/meteo/Data_storage/Data_handle/Stadistics_day.xlsx /home/ruiz17/meteo/Data_storage/Data_handle/Stadistics_day.xlsx
