@@ -1,7 +1,6 @@
 import pandas as pd
 from datetime import datetime
 
-
 def make_stadistics(df):
     last_day_data=df.iloc[-2]
     previous_day=last_day_data['Dia']

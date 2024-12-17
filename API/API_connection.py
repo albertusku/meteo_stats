@@ -1,6 +1,6 @@
 import requests
 import json
-
+import time
 
 json_weather_api_output_path="/home/ruiz17/meteo/API/api_weather_response.json"
 json_tomorrow_api_output_path="/home/ruiz17/meteo/API/api_tomorrow_response.json"
@@ -17,7 +17,6 @@ def get_current_data(params):
             #Primera columana con el dia actual, 3 primeras columnas relacionadas con el dia actual, 3 siguientes con la de mañana y 3 siguientes
             #con lo dentro de 3 dias
             #3 columanas para cada dias porque: temperatura max,min y precipitacion total
-        #Controlar excepciones de fallo de api para que lo vuelva a intentar un numero de veces determinado
     for name,url in dict_api.items():
         response=get_data_from_api(name,url,params[name])
         data.update(response)
@@ -65,6 +64,7 @@ def get_data_from_api(name,url,params):
             attempt+=1
             if attempt<max_retries:
                 print(f"ERROR--->intento={attempt}")
+                time.sleep(1000)
             else:
                 return f"HTTP error occurred: {http_err}"
         except requests.exceptions.RequestException as req_err:
