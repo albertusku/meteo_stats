@@ -7,7 +7,7 @@ def make_stadistics(df):
     previous_day=last_day_data['Dia']
     previous_month=last_day_data['Mes']
     df_data_day=make_stadistics_day(df,previous_day,previous_month) 
-    df_data_month=make_stadistics_month(df_data_day)
+    df_data_month=make_stadistics_month(df_data_day,previous_month)
 
 def make_stadistics_day(df,day,month):
     excel_stadistics_day_path="/home/ruiz17/meteo/Data_storage/Data_handle/Stadistics_day.xlsx"

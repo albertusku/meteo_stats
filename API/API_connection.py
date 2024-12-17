@@ -1,7 +1,7 @@
 import requests
 import json
 
-json_config_path="/home/ruiz17/meteo/API/data_api.json"
+
 json_weather_api_output_path="/home/ruiz17/meteo/API/api_weather_response.json"
 json_tomorrow_api_output_path="/home/ruiz17/meteo/API/api_tomorrow_response.json"
 weather_api_url = "https://api.openweathermap.org/data/2.5/weather"
@@ -17,6 +17,7 @@ def get_current_data(params):
             #Primera columana con el dia actual, 3 primeras columnas relacionadas con el dia actual, 3 siguientes con la de mañana y 3 siguientes
             #con lo dentro de 3 dias
             #3 columanas para cada dias porque: temperatura max,min y precipitacion total
+        #Controlar excepciones de fallo de api para que lo vuelva a intentar un numero de veces determinado
     for name,url in dict_api.items():
         response=get_data_from_api(name,url,params[name])
         data.update(response)
@@ -62,24 +63,3 @@ def get_data_from_api(name,url,params):
     except requests.exceptions.RequestException as req_err:
         return f"Request error occurred: {req_err}"
         
-def read_json():
-    try:
-        # Cargar datos desde el archivo JSON
-        with open(json_config_path, "r") as file:
-            config = json.load(file)
-
-        # Construir los parámetros correctos para la API
-        params = {"weather_api":{
-            "id": config["weather_api"]["station_id"],       # Nombre de la ciudad
-            "appid": config["weather_api"]["api_key"],     # API Key
-            "units": config["weather_api"]["units"]  # Unidades (métricas por defecto)
-        },
-        "tomorrow_api":{"api_key": config["tomorrow_api"]["api_key"],
-        "latitude": config["tomorrow_api"]["location"]["latitude"],
-        "longitude": config["tomorrow_api"]["location"]["longitude"]}}
-        return params
-
-    except FileNotFoundError:
-        return "Error: archivo de configuración no encontrado."
-    except json.JSONDecodeError:
-        return "Error: archivo de configuración JSON inválido."

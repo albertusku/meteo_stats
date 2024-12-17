@@ -1,9 +1,10 @@
 from datetime import datetime, timezone
 import pandas as pd
 from Data_storage.Data_handle.stadistics import make_stadistics
+import json
 
 timezone_offset=3600
-
+json_config_path="/home/ruiz17/meteo/API/data_api.json"
 
 def unix_to_time(unix_time):
     return datetime.fromtimestamp(unix_time + timezone_offset, tz=timezone.utc)
@@ -38,4 +39,26 @@ def save_excel(df,sheet_name,path):
             df.to_excel(writer, index=False, sheet_name=sheet_name)
     print(f"Datos guardados exitosamente en '{path}' en la hoja '{sheet_name}'.")
     return pd.read_excel(path)
+
+def read_json():
+    try:
+        # Cargar datos desde el archivo JSON
+        with open(json_config_path, "r") as file:
+            config = json.load(file)
+
+        # Construir los parámetros correctos para la API
+        params = {"weather_api":{
+            "id": config["weather_api"]["station_id"],       # Nombre de la ciudad
+            "appid": config["weather_api"]["api_key"],     # API Key
+            "units": config["weather_api"]["units"]  # Unidades (métricas por defecto)
+        },
+        "tomorrow_api":{"api_key": config["tomorrow_api"]["api_key"],
+        "latitude": config["tomorrow_api"]["location"]["latitude"],
+        "longitude": config["tomorrow_api"]["location"]["longitude"]}}
+        return params
+
+    except FileNotFoundError:
+        return "Error: archivo de configuración no encontrado."
+    except json.JSONDecodeError:
+        return "Error: archivo de configuración JSON inválido."
     
