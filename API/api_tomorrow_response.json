@@ -3,98 +3,98 @@
         "timelines": [
             {
                 "timestep": "30m",
-                "endTime": "2024-12-18T00:52:00Z",
-                "startTime": "2024-12-17T18:52:00Z",
+                "endTime": "2024-12-18T04:12:00Z",
+                "startTime": "2024-12-17T22:12:00Z",
                 "intervals": [
                     {
-                        "startTime": "2024-12-17T18:52:00Z",
+                        "startTime": "2024-12-17T22:12:00Z",
                         "values": {
                             "precipitationIntensity": 0,
-                            "temperature": 1.13
+                            "temperature": 1.69
                         }
                     },
                     {
-                        "startTime": "2024-12-17T19:22:00Z",
+                        "startTime": "2024-12-17T22:42:00Z",
                         "values": {
                             "precipitationIntensity": 0,
-                            "temperature": 0.84
+                            "temperature": 1.91
                         }
                     },
                     {
-                        "startTime": "2024-12-17T19:52:00Z",
+                        "startTime": "2024-12-17T23:12:00Z",
                         "values": {
                             "precipitationIntensity": 0,
-                            "temperature": 0.81
+                            "temperature": 2
                         }
                     },
                     {
-                        "startTime": "2024-12-17T20:22:00Z",
+                        "startTime": "2024-12-17T23:42:00Z",
                         "values": {
                             "precipitationIntensity": 0,
-                            "temperature": 0.84
+                            "temperature": 1.87
                         }
                     },
                     {
-                        "startTime": "2024-12-17T20:52:00Z",
+                        "startTime": "2024-12-18T00:12:00Z",
                         "values": {
                             "precipitationIntensity": 0,
-                            "temperature": 0.9
+                            "temperature": 1.72
                         }
                     },
                     {
-                        "startTime": "2024-12-17T21:22:00Z",
+                        "startTime": "2024-12-18T00:42:00Z",
                         "values": {
                             "precipitationIntensity": 0,
-                            "temperature": 1.24
+                            "temperature": 1.53
                         }
                     },
                     {
-                        "startTime": "2024-12-17T21:52:00Z",
+                        "startTime": "2024-12-18T01:12:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 1.38
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-18T01:42:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 1.28
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-18T02:12:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 1.31
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-18T02:42:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 1.54
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-18T03:12:00Z",
                         "values": {
                             "precipitationIntensity": 0,
                             "temperature": 1.68
                         }
                     },
                     {
-                        "startTime": "2024-12-17T22:22:00Z",
+                        "startTime": "2024-12-18T03:42:00Z",
                         "values": {
                             "precipitationIntensity": 0,
-                            "temperature": 1.89
+                            "temperature": 1.69
                         }
                     },
                     {
-                        "startTime": "2024-12-17T22:52:00Z",
+                        "startTime": "2024-12-18T04:12:00Z",
                         "values": {
                             "precipitationIntensity": 0,
-                            "temperature": 2.02
-                        }
-                    },
-                    {
-                        "startTime": "2024-12-17T23:22:00Z",
-                        "values": {
-                            "precipitationIntensity": 0,
-                            "temperature": 1.96
-                        }
-                    },
-                    {
-                        "startTime": "2024-12-17T23:52:00Z",
-                        "values": {
-                            "precipitationIntensity": 0,
-                            "temperature": 1.83
-                        }
-                    },
-                    {
-                        "startTime": "2024-12-18T00:22:00Z",
-                        "values": {
-                            "precipitationIntensity": 0,
-                            "temperature": 1.66
-                        }
-                    },
-                    {
-                        "startTime": "2024-12-18T00:52:00Z",
-                        "values": {
-                            "precipitationIntensity": 0,
-                            "temperature": 1.47
+                            "temperature": 2.12
                         }
                     }
                 ]
