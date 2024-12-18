@@ -34,11 +34,11 @@ def make_stadistics_month(df,month):
     now=datetime.now()
     year=now.year
     keys=["temp_max","temp_min","temp_mean","precipitaciones_totales","wind_speed_max"]
-    temp_max=df[(df['Mes']==month)]['temp (C)'].max()
-    temp_min=df[(df['Mes']==month)]['temp (C)'].min()
-    temp_mean=df[(df['Mes']==month)]['temp (C)'].mean()
-    precipitaciones_totales=df[(df['Mes']==month)]['precipitation (mm/h)'].sum()
-    wind_speed_max=df[(df['Mes']==month)]['wind_speed(m/s)'].mean()
+    temp_max=df[(df['Mes']==month)]['temp_max'].max()
+    temp_min=df[(df['Mes']==month)]['temp_min'].min()
+    temp_mean=df[(df['Mes']==month)]['temp_mean'].mean()
+    precipitaciones_totales=df[(df['Mes']==month)]['precipitaciones_totales'].sum()
+    wind_speed_max=df[(df['Mes']==month)]['wind_speed_max'].mean()
     values=[temp_max,temp_min,temp_mean,precipitaciones_totales,wind_speed_max]
     data_month=dict(zip(keys,values))
     new_data={"Mes":month}
