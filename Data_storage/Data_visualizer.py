@@ -61,6 +61,15 @@ def generate_image(args):
                 # Graficar con Seaborn diferenciando los días por color
                 plt.figure(figsize=(10, 6))  # Ajustar el tamaño del gráfico
                 sns.lineplot(x="Hora", y="temp (C)", data=df_filter, hue="Fecha", marker="o", linestyle="-")
+        else:
+            df_1=pd.read_excel(Historical_weather_path,sheet_name=year_1)
+            df_2=df=pd.read_excel(Historical_weather_path,sheet_name=year_2)
+            df_filter = df[((df_1['Dia'] == day_1) & (df_1['Mes'] == month_1)) |((df_2['Dia'] == day_2) & (df_2['Mes'] == month_2))].copy()
+            if args.temperatura:
+                df_filter['Fecha'] = df_filter['Dia'].astype(str) + '-' + df_filter['Mes']
+                # Graficar con Seaborn diferenciando los días por color
+                plt.figure(figsize=(10, 6))  # Ajustar el tamaño del gráfico
+                sns.lineplot(x="Hora", y="temp (C)", data=df_filter, hue="Fecha", marker="o", linestyle="-")
 
 
     plt.tight_layout()  # Ajusta el layout para evitar cortes
