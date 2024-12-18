@@ -30,55 +30,45 @@ def def_data_time(fecha):
     month=meses[int(month)-1]
     return int(day),month,year
 
-
-def generate_image(args):
+def generate_image(args,df,mod=None):
+    key=get_key(args)
     sns.set_theme(style="whitegrid")
-    day_1,month_1,year_1=def_data_time(args.fecha_1)
-    df=pd.read_excel(Historical_weather_path,sheet_name=year_1)
-    if not args.fecha_2:
-        df_filter = df[(df['Dia'] == day_1) & (df['Mes'] == month_1)]
-        if args.temperatura:
-            plt.figure(figsize=(10, 6))  # Ajustar el tamaño del gráfico
-            sns.lineplot(x="Hora", y="temp (C)", data=df_filter, marker="o", linestyle="-", color="b")
-        elif args.precipitacion:
-            plt.figure(figsize=(10, 6))  # Ajustar el tamaño del gráfico
-            sns.lineplot(x="Hora", y="precipitation (mm/h)", data=df_filter, marker="o", linestyle="-", color="b")
-        elif args.humedad:
-            plt.figure(figsize=(10, 6))  # Ajustar el tamaño del gráfico
-            sns.lineplot(x="Hora", y="hum(%)", data=df_filter, marker="o", linestyle="-", color="b")
-        elif args.presion:
-            plt.figure(figsize=(10, 6))  # Ajustar el tamaño del gráfico
-            sns.lineplot(x="Hora", y="pres(hPa)", data=df_filter, marker="o", linestyle="-", color="b")
-        elif args.viento:
-            plt.figure(figsize=(10, 6))  # Ajustar el tamaño del gráfico
-            sns.lineplot(x="Hora", y="wind_speed(m/s)", data=df_filter, marker="o", linestyle="-", color="b")
-    else:
-        day_2,month_2,year_2=def_data_time(args.fecha_2)
-        if year_1==year_2:
-            df_filter = df[((df['Dia'] == day_1) & (df['Mes'] == month_1)) |((df['Dia'] == day_2) & (df['Mes'] == month_2))].copy()
-            if args.temperatura:
-                df_filter['Fecha'] = df_filter['Dia'].astype(str) + '-' + df_filter['Mes']
-                # Graficar con Seaborn diferenciando los días por color
-                plt.figure(figsize=(10, 6))  # Ajustar el tamaño del gráfico
-                sns.lineplot(x="Hora", y="temp (C)", data=df_filter, hue="Fecha", marker="o", linestyle="-")
-        else:
-            df_1=pd.read_excel(Historical_weather_path,sheet_name=year_1)
-            df_2=df=pd.read_excel(Historical_weather_path,sheet_name=year_2)
-            df_filter = df[((df_1['Dia'] == day_1) & (df_1['Mes'] == month_1)) |((df_2['Dia'] == day_2) & (df_2['Mes'] == month_2))].copy()
-            if args.temperatura:
-                df_filter['Fecha'] = df_filter['Dia'].astype(str) + '-' + df_filter['Mes']
-                # Graficar con Seaborn diferenciando los días por color
-                plt.figure(figsize=(10, 6))  # Ajustar el tamaño del gráfico
-                sns.lineplot(x="Hora", y="temp (C)", data=df_filter, hue="Fecha", marker="o", linestyle="-")
-
-
+    plt.figure(figsize=(10, 6))  # Ajustar el tamaño del gráfico
+    sns.lineplot(x="Hora", y=key, data=df, marker="o", linestyle="-", color="b",hue=mod)
     plt.tight_layout()  # Ajusta el layout para evitar cortes
     plt.xticks(rotation=45)  # Rotar etiquetas 45 grados
     plt.show()
 
-
-
-
+def get_key(args):
+    if args.temperatura:
+        return "temp (C)"
+    elif args.precipitacion:
+        return "precipitation (mm/h)"
+    elif args.humedad:
+        return "hum(%)"
+    elif args.presion:
+        return "pres(hPa)"
+    elif args.viento:
+        return "wind_speed(m/s)"
+    
+def handle_images(args):
+    day_1,month_1,year_1=def_data_time(args.fecha_1)
+    df=pd.read_excel(Historical_weather_path,sheet_name=year_1)
+    if not args.fecha_2:
+        df_filter = df[(df['Dia'] == day_1) & (df['Mes'] == month_1)]
+        generate_image(args,df_filter)
+    else:
+        day_2,month_2,year_2=def_data_time(args.fecha_2)
+        if year_1==year_2:
+            df_filter = df[((df['Dia'] == day_1) & (df['Mes'] == month_1)) |((df['Dia'] == day_2) & (df['Mes'] == month_2))].copy()
+            df_filter['Fecha'] = df_filter['Dia'].astype(str) + '-' + df_filter['Mes']
+            generate_image(args,df_filter,mod='Fecha')      
+        else:
+            df_1=pd.read_excel(Historical_weather_path,sheet_name=year_1)
+            df_2=df=pd.read_excel(Historical_weather_path,sheet_name=year_2)
+            df_filter = df[((df_1['Dia'] == day_1) & (df_1['Mes'] == month_1)) |((df_2['Dia'] == day_2) & (df_2['Mes'] == month_2))].copy()
+            generate_image(args,df_filter,mod='Fecha')
+        
 if __name__ == "__main__":
     args=argparser()
-    generate_image(args)
+    handle_images(args)
