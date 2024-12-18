@@ -17,7 +17,7 @@ def create_storage_dataframe(data):
     year=now.year
     mes=now.strftime("%B")
     dia=now.day
-    hora=now.strftime("%H:%M:%S")
+    hora=now.strftime("%H:%M")
     new_data={"Mes":mes,"Dia":dia,"Hora":hora}
     data={**new_data,**data}
     data.pop("data_time",None)
