@@ -10,3 +10,6 @@ if __name__ == "__main__":
         #crear como una especie de dif entre la raspi y el pc
         #crear un BK de los datos generados
         #Permitir el el bk de lo que hay en la raspi si el codigo que esta en la raspi funciona
+        #Hacer que todos los paths sean genericos aka que sirva para todo el mundo
+        #Hacer que antes del push_to_raspi se ejecute el programa y si funciona si suba el codigo
+        #Poder ejecutar una prueba sin que se guarden los datos
