@@ -2,7 +2,7 @@ import seaborn as sns
 import argparse
 import pandas as pd
 import matplotlib.pyplot as plt
-from datetime import datetime, timedelta
+import os
 
 #TODO list
     #Generar diagrama de puntos para todo tipo de datos,en un franja de tiempo, un mes determinado, lo que va de año
@@ -70,5 +70,6 @@ def handle_images(args):
             generate_image(args,df_filter,mod='Fecha')
         
 if __name__ == "__main__":
+    os.system(".././pull_data_to_PC.sh")
     args=argparser()
     handle_images(args)
