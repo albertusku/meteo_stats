@@ -7,6 +7,7 @@ import os
 #TODO list
     #Generar diagrama de puntos para todo tipo de datos,en un franja de tiempo, un mes determinado, lo que va de año
     #Generar un diagrama donde se superpongan x dias o el mes entero
+    #Chekar si hay alguna hora que no es exacta y ponerla exacta
 
 Historical_weather_path="./Storage/Historical_weather.xlsx"
 meses = [
