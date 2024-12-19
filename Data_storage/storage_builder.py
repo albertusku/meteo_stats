@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 import pandas as pd
 from Data_storage.stadistics import make_stadistics
 import json
+import os
 
 timezone_offset=3600
 json_config_path="./API/data_api.json"
@@ -61,4 +62,10 @@ def read_json():
         return "Error: archivo de configuración no encontrado."
     except json.JSONDecodeError:
         return "Error: archivo de configuración JSON inválido."
-    
+
+def create_BK():
+    path="./Data_storage/Storage" 
+    files=os.listdir(path)
+    files = [os.path.join(path, f) for f in files if os.path.isfile(os.path.join(path, f))]
+    for file in files:
+        os.system(f"cp {file} /media/ruiz17/BK_STORAGE")

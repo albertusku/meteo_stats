@@ -6,9 +6,9 @@ if __name__ == "__main__":
     params=read_json()
     data = get_current_data(params)
     create_storage_dataframe(data)
+    create_BK()
     #TODO list
         #crear como una especie de dif entre la raspi y el pc
-        #crear un BK de los datos generados
         #Permitir el el bk de lo que hay en la raspi si el codigo que esta en la raspi funciona
         #Hacer que todos los paths sean genericos aka que sirva para todo el mundo
         #Hacer que antes del push_to_raspi se ejecute el programa y si funciona si suba el codigo
