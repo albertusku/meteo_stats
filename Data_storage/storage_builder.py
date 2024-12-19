@@ -4,13 +4,13 @@ from Data_storage.stadistics import make_stadistics
 import json
 
 timezone_offset=3600
-json_config_path="/home/ruiz17/meteo/API/data_api.json"
+json_config_path="./API/data_api.json"
 
 def unix_to_time(unix_time):
     return datetime.fromtimestamp(unix_time + timezone_offset, tz=timezone.utc)
 
 def create_storage_dataframe(data):
-    excel_path="/home/ruiz17/meteo/Data_storage/Storage/Historical_weather.xlsx"
+    excel_path="./Data_storage/Storage/Historical_weather.xlsx"
     # data["sunrise"]=unix_to_time(data["sunrise"])
     # data["sunset"]=unix_to_time(data["sunset"])
     now=datetime.now()

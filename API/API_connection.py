@@ -2,8 +2,8 @@ import requests
 import json
 import time
 
-json_weather_api_output_path="/home/ruiz17/meteo/API/api_weather_response.json"
-json_tomorrow_api_output_path="/home/ruiz17/meteo/API/api_tomorrow_response.json"
+json_weather_api_output_path="./API/api_weather_response.json"
+json_tomorrow_api_output_path="./API/api_tomorrow_response.json"
 weather_api_url = "https://api.openweathermap.org/data/2.5/weather"
 tomorrow_api_url= url = "https://api.tomorrow.io/v4/weather/forecast"
 

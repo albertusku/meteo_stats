@@ -8,7 +8,7 @@ import os
     #Generar diagrama de puntos para todo tipo de datos,en un franja de tiempo, un mes determinado, lo que va de año
     #Generar un diagrama donde se superpongan x dias o el mes entero
 
-Historical_weather_path="/home/ruiz17/meteo/Data_storage/Storage/Historical_weather.xlsx"
+Historical_weather_path="./Storage/Historical_weather.xlsx"
 meses = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"]
