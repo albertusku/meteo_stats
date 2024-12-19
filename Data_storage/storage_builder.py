@@ -5,13 +5,13 @@ import json
 import os
 
 timezone_offset=3600
-json_config_path="./API/data_api.json"
+json_config_path="/home/ruiz17/meteo/API/data_api.json"
 
 def unix_to_time(unix_time):
     return datetime.fromtimestamp(unix_time + timezone_offset, tz=timezone.utc)
 
 def create_storage_dataframe(data):
-    excel_path="./Data_storage/Storage/Historical_weather.xlsx"
+    excel_path="/home/ruiz17/meteo/Data_storage/Storage/Historical_weather.xlsx"
     # data["sunrise"]=unix_to_time(data["sunrise"])
     # data["sunset"]=unix_to_time(data["sunset"])
     now=datetime.now()
@@ -64,7 +64,7 @@ def read_json():
         return "Error: archivo de configuración JSON inválido."
 
 def create_BK():
-    path="./Data_storage/Storage" 
+    path="/home/ruiz17/meteo/Data_storage/Storage" 
     files=os.listdir(path)
     files = [os.path.join(path, f) for f in files if os.path.isfile(os.path.join(path, f))]
     for file in files:

@@ -3,6 +3,7 @@
         "timelines": [
             {
                 "timestep": "30m",
+<<<<<<< HEAD
                 "endTime": "2024-12-20T03:53:00Z",
                 "startTime": "2024-12-19T21:53:00Z",
                 "intervals": [
@@ -95,6 +96,100 @@
                         "values": {
                             "precipitationIntensity": 0,
                             "temperature": -1.46
+=======
+                "endTime": "2024-12-18T04:12:00Z",
+                "startTime": "2024-12-17T22:12:00Z",
+                "intervals": [
+                    {
+                        "startTime": "2024-12-17T22:12:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 1.69
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-17T22:42:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 1.91
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-17T23:12:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 2
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-17T23:42:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 1.87
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-18T00:12:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 1.72
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-18T00:42:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 1.53
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-18T01:12:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 1.38
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-18T01:42:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 1.28
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-18T02:12:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 1.31
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-18T02:42:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 1.54
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-18T03:12:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 1.68
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-18T03:42:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 1.69
+                        }
+                    },
+                    {
+                        "startTime": "2024-12-18T04:12:00Z",
+                        "values": {
+                            "precipitationIntensity": 0,
+                            "temperature": 2.12
+>>>>>>> parent of 2f6d71f (Relative paths)
                         }
                     }
                 ]

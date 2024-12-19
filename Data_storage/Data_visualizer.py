@@ -9,7 +9,7 @@ import os
     #Generar un diagrama donde se superpongan x dias o el mes entero
     #Chekar si hay alguna hora que no es exacta y ponerla exacta
 
-Historical_weather_path="./Storage/Historical_weather.xlsx"
+Historical_weather_path="/home/ruiz17/meteo/Data_storage/Storage/Historical_weather.xlsx"
 meses = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"]
