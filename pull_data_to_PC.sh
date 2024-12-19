@@ -1,2 +1,3 @@
 scp -r ruiz17@pi:/home/ruiz17/meteo/Data_storage/Storage/Historical_weather.xlsx /home/ruiz17/meteo/Data_storage/Storage/Historical_weather.xlsx
 scp -r ruiz17@pi:/home/ruiz17/meteo/Data_storage/Storage/Stadistics_day.xlsx /home/ruiz17/meteo/Data_storage/Storage/Stadistics_day.xlsx
+scp -r ruiz17@pi:/home/ruiz17/meteo/Data_storage/Storage/Stadistics_month.xlsx /home/ruiz17/meteo/Data_storage/Storage/Stadistics_month.xlsx
