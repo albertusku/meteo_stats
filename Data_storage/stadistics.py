@@ -30,10 +30,12 @@ def make_stadistics_day(df,day,month):
 
 def make_stadistics_month(df,month):
     #TODO Indicar el dia de las temepraturas maximas y minimas
-    #TODO 
+    #TODO actualizar el mes , current_status----> se escribe una nueva linea debajo
     excel_stadistics_month_path="/home/ruiz17/meteo/Data_storage/Storage/Stadistics_month.xlsx"
     now=datetime.now()
     year=now.year
+    current_df=pd.read_excel(excel_stadistics_month_path,sheet_name=year)
+    current_filter_df=current_df[current_df["Mes"]!=month]#Todos los datos menos los del mes que se tienen que actualizar
     keys=["temp_max","temp_min","temp_mean","precipitaciones_totales","wind_speed_max"]
     temp_max=df[(df['Mes']==month)]['temp_max'].max()
     temp_min=df[(df['Mes']==month)]['temp_min'].min()
@@ -45,7 +47,8 @@ def make_stadistics_month(df,month):
     new_data={"Mes":month}
     data_month={**new_data,**data_month}
     df_data_month=pd.DataFrame([data_month])
+    df_month_updated=pd.concat([current_filter_df,df_data_month],ignore_index=False)
     from Data_storage.storage_builder import save_excel
-    return save_excel(df_data_month,str(year),excel_stadistics_month_path)
+    return save_excel(df_month_updated,str(year),excel_stadistics_month_path)
 
 
