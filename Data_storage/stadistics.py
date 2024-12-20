@@ -30,6 +30,7 @@ def make_stadistics_day(df,day,month):
 
 def make_stadistics_month(df,month):
     #TODO Indicar el dia de las temepraturas maximas y minimas
+    #TODO 
     excel_stadistics_month_path="/home/ruiz17/meteo/Data_storage/Storage/Stadistics_month.xlsx"
     now=datetime.now()
     year=now.year
@@ -38,7 +39,7 @@ def make_stadistics_month(df,month):
     temp_min=df[(df['Mes']==month)]['temp_min'].min()
     temp_mean=df[(df['Mes']==month)]['temp_mean'].mean()
     precipitaciones_totales=df[(df['Mes']==month)]['precipitaciones_totales'].sum()
-    wind_speed_max=df[(df['Mes']==month)]['wind_speed_max'].mean()
+    wind_speed_max=df[(df['Mes']==month)]['wind_speed_max'].max()
     values=[temp_max,temp_min,temp_mean,precipitaciones_totales,wind_speed_max]
     data_month=dict(zip(keys,values))
     new_data={"Mes":month}
