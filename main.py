@@ -1,5 +1,6 @@
 from API.API_connection import *
 from Data_storage.storage_builder import *
+from datetime import datetime
 
 # Ejemplo de uso
 if __name__ == "__main__":
@@ -7,6 +8,10 @@ if __name__ == "__main__":
     data = get_current_data(params)
     create_storage_dataframe(data)
     create_BK()
+    now=datetime.now()
+    if now.hour == 0 and  now.min == 0:
+        data_forecast= get_forecast_data(params["tomorrow_api"])
+        create_storage_forecast(data_forecast)
     #TODO list
         #crear como una especie de dif entre la raspi y el pc
         #Permitir el el bk de lo que hay en la raspi si el codigo que esta en la raspi funciona
