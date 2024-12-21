@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Datos Meteorológicos</h1>
+    
+    {% if grafico_historical %}
+    <h2>Datos Históricos</h2>
+    <div>
+        {{ grafico_historical|safe }}
+    </div>
+    {% endif %}
+
+    {% if grafico_daily %}
+    <h2>Estadísticas Diarias</h2>
+    <div>
+        {{ grafico_daily|safe }}
+    </div>
+    {% endif %}
+
+    {% if grafico_monthly %}
+    <h2>Estadísticas Mensuales</h2>
+    <div>
+        {{ grafico_monthly|safe }}
+    </div>
+    {% endif %}
+{% endblock %}
