@@ -2,6 +2,7 @@ import requests
 import json
 import time
 from config import *
+from datetime import timezone,timedelta
 
 dict_api={"tomorrow_api":tomorrow_api_url,"weather_api":weather_api_url}
 data={}
@@ -83,7 +84,7 @@ def get_forecast_data(params):
             response.raise_for_status()  # Lanza una excepción si hay un error HTTP
             # Parsear la respuesta JSON
             data = response.json()
-            with open(json_weather_api_output_path, "w") as file:
+            with open(TOMORROW_API_FORECAST_DIR, "w") as file:
                     json.dump(data, file, indent=4)  # Formato legible para humanos
             today=datetime.now(timezone.utc)
             dates = {
