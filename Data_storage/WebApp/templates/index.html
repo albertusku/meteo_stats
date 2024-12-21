@@ -2,25 +2,35 @@
 
 {% block content %}
     <h1>Datos Meteorológicos</h1>
-    
-    {% if grafico_historical %}
-    <h2>Datos Históricos</h2>
-    <div>
-        {{ grafico_historical|safe }}
-    </div>
-    {% endif %}
 
-    {% if grafico_daily %}
-    <h2>Estadísticas Diarias</h2>
-    <div>
-        {{ grafico_daily|safe }}
-    </div>
-    {% endif %}
+    <!-- Formulario para seleccionar mes y día -->
+    <form method="post">
+        <label for="mes">Selecciona un mes:</label>
+        <select name="mes" id="mes" onchange="this.form.submit()">
+            <option value="">-- Selecciona un mes --</option>
+            {% for mes in meses_disponibles %}
+                <option value="{{ mes }}" {% if mes == mes_seleccionado %}selected{% endif %}>
+                    {{ mes }}
+                </option>
+            {% endfor %}
+        </select>
 
-    {% if grafico_monthly %}
-    <h2>Estadísticas Mensuales</h2>
+        {% if dias_disponibles %}
+            <label for="dia">Selecciona un día:</label>
+            <select name="dia" id="dia">
+                <option value="">-- Selecciona un día --</option>
+                {% for dia in dias_disponibles %}
+                    <option value="{{ dia|int }}" {% if dia|int == dia_seleccionado|int %}selected{% endif %}>
+                        {{ dia }}
+                    </option>
+                {% endfor %}
+            </select>
+            <button type="submit">Filtrar</button>
+        {% endif %}
+    </form>
+
+    <!-- Gráfico o mensaje -->
     <div>
-        {{ grafico_monthly|safe }}
+        {{ grafico|safe }}
     </div>
-    {% endif %}
 {% endblock %}

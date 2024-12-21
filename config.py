@@ -11,6 +11,7 @@ STADISTICS_DAY_DIR=os.path.join(DATA_DIR, 'Stadistics_day.xlsx')
 STADISTICS_MONTH_DIR=os.path.join(DATA_DIR, 'Stadistics_month.xlsx')
 WEATHER_API_DIR=os.path.join(API_DIR,'api_weather_response.json')
 TOMORROW_API_DIR=os.path.join(API_DIR,'api_tomorrow_response.json')
+TOMORROW_API_FORECAST_DIR=os.path.join(API_DIR,'api_tomorrow_forecast_response.json')
 
 #DATETIME
 now=datetime.now()

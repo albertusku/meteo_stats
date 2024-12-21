@@ -1,13 +1,15 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
+form {
+    margin: 20px 0;
+    text-align: center;
 }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+select, button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+}
+
+div {
+    margin: 30px 0;
+    text-align: center;
 }
