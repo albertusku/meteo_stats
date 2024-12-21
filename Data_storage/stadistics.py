@@ -34,7 +34,7 @@ def make_stadistics_month(df,month):
     excel_stadistics_month_path="/home/ruiz17/meteo/Data_storage/Storage/Stadistics_month.xlsx"
     now=datetime.now()
     year=now.year
-    current_df=pd.read_excel(excel_stadistics_month_path,sheet_name=year)
+    current_df=pd.read_excel(excel_stadistics_month_path,sheet_name=str(year))
     current_filter_df=current_df[current_df["Mes"]!=month]#Todos los datos menos los del mes que se tienen que actualizar
     keys=["temp_max","temp_min","temp_mean","precipitaciones_totales","wind_speed_max"]
     temp_max=df[(df['Mes']==month)]['temp_max'].max()
