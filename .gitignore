@@ -2,3 +2,4 @@ BK/
 *.txt
 *.xlsx
 Dockerfile
+Logs_History/
