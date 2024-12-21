@@ -3,6 +3,7 @@ import pandas as pd
 from Data_storage.stadistics import make_stadistics
 import json
 import os
+from config import *
 
 timezone_offset=3600
 json_config_path="/home/ruiz17/meteo/API/data_api.json"
@@ -11,10 +12,8 @@ def unix_to_time(unix_time):
     return datetime.fromtimestamp(unix_time + timezone_offset, tz=timezone.utc)
 
 def create_storage_dataframe(data):
-    excel_path="/home/ruiz17/meteo/Data_storage/Storage/Historical_weather.xlsx"
     # data["sunrise"]=unix_to_time(data["sunrise"])
     # data["sunset"]=unix_to_time(data["sunset"])
-    now=datetime.now()
     year=now.year
     mes=now.strftime("%B")
     dia=now.day
@@ -24,7 +23,7 @@ def create_storage_dataframe(data):
     data.pop("data_time",None)
     print(data) #Para los logs del cron
     df=pd.DataFrame([data])
-    df_data=save_excel(df,str(year),excel_path)
+    df_data=save_excel(df,str(year),HISTORICAL_WEATHER_DIR)
     if now.hour == 0 and now.minute == 0: # Implica que un nuevo dia ha empezado
         make_stadistics(df_data)
 
@@ -69,3 +68,9 @@ def create_BK():
     files = [os.path.join(path, f) for f in files if os.path.isfile(os.path.join(path, f))]
     for file in files:
         os.system(f"cp {file} /media/ruiz17/BK_STORAGE")
+
+def create_storage_forecast(data):
+    print(data)
+    df=pd.DataFrame([data])
+    now=datetime.now()
+    df_data=save_excel(df,str(now.year),HISTORICAL_WEATHER_FORECAST_DIR)

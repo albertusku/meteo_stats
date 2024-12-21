@@ -1,11 +1,7 @@
 import requests
 import json
 import time
-
-json_weather_api_output_path="/home/ruiz17/meteo/API/api_weather_response.json"
-json_tomorrow_api_output_path="/home/ruiz17/meteo/API/api_tomorrow_response.json"
-weather_api_url = "https://api.openweathermap.org/data/2.5/weather"
-tomorrow_api_url= url = "https://api.tomorrow.io/v4/weather/forecast"
+from config import *
 
 dict_api={"tomorrow_api":tomorrow_api_url,"weather_api":weather_api_url}
 data={}
@@ -32,7 +28,7 @@ def get_data_from_api(name,url,params):
                 response.raise_for_status()  # Lanza una excepción si hay un error HTTP
                 # Parsear la respuesta JSON
                 data = response.json()
-                with open(json_weather_api_output_path, "w") as file:
+                with open(WEATHER_API_DIR, "w") as file:
                         json.dump(data, file, indent=4)  # Formato legible para humanos
                 # Extraer datos
                 humidity= data["main"]["humidity"]
@@ -48,7 +44,7 @@ def get_data_from_api(name,url,params):
                 response.raise_for_status()  # Lanza una excepción si hay un error HTTP
                 # Parsear la respuesta JSON
                 data = response.json()
-                with open(json_tomorrow_api_output_path, "w") as file:
+                with open(TOMORROW_API_DIR, "w") as file:
                     json.dump(data, file, indent=4)
                 intervals = data["data"]["timelines"][0]["intervals"]
                 # Extraer el primer intervalo (ejemplo de datos actuales)
